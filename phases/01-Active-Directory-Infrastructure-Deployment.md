@@ -46,18 +46,40 @@ Why a Private switch?
 
 Important: With this configuration, `DC01` won't have internet access. We'll handle Windows updates and any required downloads separately, without exposing the domain controller to the home LAN.
 
-2. ## Create the isolated Hyper-V virtual switch
+## 2. Create the isolated Hyper-V virtual switch
 
 On your physical Windows computer:
 1. Open Hyper-V Manager.
 2. Select your computer in the left panel.
 3. Click Virtual Switch Manager.
-4. Select Private and click Create Virtual Switch.
+4. Select "Private" and click Create Virtual Switch.
 5. Enter the name ShadowStrike-LAN.
 6. Click Apply, then OK.
- <img width="1712" height="851" alt="image" src="https://github.com/user-attachments/assets/1f3d07e5-a0c4-48c7-8fff-f63096c993a4" />
 
+<img width="1712" height="851" alt="image" src="https://github.com/user-attachments/assets/1f3d07e5-a0c4-48c7-8fff-f63096c993a4" />
 
+## 3. Create the DC01 virtual machine
+
+First, obtain a legitimate Windows Server 2022 or 2025 ISO from the Microsoft Evaluation Center.
+
+In Hyper-V Manager, click New → Virtual Machine and configure the following:
+
+Setting | Recommended value
+--- | ---
+VM name | DC01
+Generation | Generation 2
+Startup memory | 4096 MB
+Dynamic memory | Disabled initially
+Processors | 2 virtual CPUs
+Virtual hard disk | 80 GB VHDX
+Network connection | ShadowStrike-LAN
+Installation media | Windows Server ISO
+
+Finish the wizard, then open `DC01` → Settings → Processor to assign 2 virtual processors (if not set during creation).
+
+Start the VM and install Windows Server. For easier administration during the lab, choose the Desktop Experience installation option.
+
+After installation, sign in with the local `Administrator` account.
 
 
 ## Notes and Tips

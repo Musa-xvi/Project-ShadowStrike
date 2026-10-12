@@ -1,0 +1,41 @@
+# Project Phases
+
+## Phase 1: Active Directory Infrastructure Deployment
+
+Objective
+- Build a realistic, enterprise-grade Active Directory (AD) lab environment that mirrors common organizational structure and services so Red and Blue teams can operate against a representative target.
+
+Key Deliverables
+- Domain Controller(s) deployed and configured (AD DS, DNS, DHCP as required)
+- Member servers (file servers, application servers) and workstations joined to the domain
+- Organizational Units (OUs), user and group structure seeded for realistic permissions
+- Service accounts, Group Policy Objects (GPOs), and sample services (e.g., AD CS, IIS) where appropriate
+- Network segmentation and basic firewall rules to emulate enterprise network zones
+- Baseline snapshots/backups for easy reset between exercises
+
+Example Tasks
+- Design AD topology and naming conventions
+- Provision VMs or cloud instances for DCs, servers, and endpoints
+- Install and promote Domain Controllers
+- Configure DNS, DHCP, and time services
+- Create OUs, users, groups, service accounts, and initial GPOs
+- Harden default configurations to a defined baseline (document deviations for Red Teaming)
+- Create scripted automation (IaC) to deploy/teardown the environment
+
+Notes
+- Keep the environment modular and easily resettable — use snapshots or IaC tooling (Terraform/Ansible) where possible.
+- Document all credentials, service account privileges, and network topology for both teams.
+
+---
+
+## Phase 2: Attack Emulation (Red Team)
+- Placeholder: plan and execute stealth-focused attack scenarios against the Phase 1 environment.
+
+## Phase 3: Detection & Incident Response (Blue Team)
+- Placeholder: tune detections, run hunting exercises, and validate response playbooks.
+
+## Phase 4: Monitoring, Logging & Forensics
+- Placeholder: deploy centralized logging, SIEM rules, and forensic data collection.
+
+## Phase 5: Hardening, Remediation & Reporting
+- Placeholder: apply mitigations, retest, and produce final reports and playbooks.

@@ -23,7 +23,7 @@ By the end of this setup, you should have a Windows Server virtual machine named
 7. Create snapshots/checkpoints of `DC01` after configuration.
 8. Build or provision Windows client VMs and join them to `shadowstrike.lab`.
 
-## Network architecture
+## 1. Network architecture
 We'll keep the existing Wi-Fi network separate from the Active Directory lab.
 
 Setting | Configuration
@@ -45,6 +45,20 @@ Why a Private switch?
 - A Private virtual switch allows virtual machines attached to the same switch to communicate with each other without directly connecting them to your physical host or home network. For the initial deployment, this provides a useful level of isolation. We'll attach `CLIENT01`, `CLIENT02`, and eventually the Red Team and Blue Team machines to this virtual network.
 
 Important: With this configuration, `DC01` won't have internet access. We'll handle Windows updates and any required downloads separately, without exposing the domain controller to the home LAN.
+
+2. ## Create the isolated Hyper-V virtual switch
+
+On your physical Windows computer:
+1. Open Hyper-V Manager.
+2. Select your computer in the left panel.
+3. Click Virtual Switch Manager.
+4. Select Private and click Create Virtual Switch.
+5. Enter the name ShadowStrike-LAN.
+6. Click Apply, then OK.
+ <img width="1712" height="851" alt="image" src="https://github.com/user-attachments/assets/1f3d07e5-a0c4-48c7-8fff-f63096c993a4" />
+
+
+
 
 ## Notes and Tips
 - Use a lab-only domain (e.g., `shadowstrike.lab`) to avoid any risk to production DNS.

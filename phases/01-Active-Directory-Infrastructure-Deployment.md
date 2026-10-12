@@ -23,6 +23,29 @@ By the end of this setup, you should have a Windows Server virtual machine named
 7. Create snapshots/checkpoints of `DC01` after configuration.
 8. Build or provision Windows client VMs and join them to `shadowstrike.lab`.
 
+## Network architecture
+We'll keep the existing Wi-Fi network separate from the Active Directory lab.
+
+Setting | Configuration
+--- | ---
+Hypervisor | Microsoft Hyper-V
+Physical host IP | 192.168.8.149 (DHCP)
+Home router | 192.168.8.1
+Virtual switch | ShadowStrike-LAN
+Virtual switch type | Private
+Lab subnet | 10.10.10.0/24
+Domain controller | DC01
+DC01 IP address | 10.10.10.10
+Subnet mask | 255.255.255.0
+Default gateway | None initially
+Preferred DNS | 10.10.10.10
+AD domain | ad.shadowstrike.test
+
+Why a Private switch?
+- A Private virtual switch allows virtual machines attached to the same switch to communicate with each other without directly connecting them to your physical host or home network. For the initial deployment, this provides a useful level of isolation. We'll attach `CLIENT01`, `CLIENT02`, and eventually the Red Team and Blue Team machines to this virtual network.
+
+Important: With this configuration, `DC01` won't have internet access. We'll handle Windows updates and any required downloads separately, without exposing the domain controller to the home LAN.
+
 ## Notes and Tips
 - Use a lab-only domain (e.g., `shadowstrike.lab`) to avoid any risk to production DNS.
 - If using Hyper-V on Windows 10/11 or Windows Server, prefer generation 2 VMs with Secure Boot disabled only if you need legacy boot.

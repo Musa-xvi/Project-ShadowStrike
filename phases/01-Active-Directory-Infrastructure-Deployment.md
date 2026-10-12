@@ -1,7 +1,7 @@
 # Phase 1: Active Directory Infrastructure Deployment
 
 Objective
-- Build a realistic, enterprise-grade Active Directory (AD) lab environment that mirrors common organizational structure and services so Red and Blue teams can operate against a representative target.
+- Deploy a Windows Server domain controller, configure Active Directory Domain Services (AD DS), establish DNS, create organizational units and user accounts, and join Windows client machines to the domain.
 
 Key Deliverables
 - Domain Controller(s) deployed and configured (AD DS, DNS, DHCP as required)

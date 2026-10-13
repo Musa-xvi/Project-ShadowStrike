@@ -1,4 +1,4 @@
-# Project Phases (index)
+# Project Setup Phases (index)
 
 The detailed phase documents live in the `phases/` directory:
 

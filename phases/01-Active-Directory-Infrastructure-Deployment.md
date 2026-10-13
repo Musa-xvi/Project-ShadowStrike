@@ -204,7 +204,7 @@ Validation:
 - From CLIENT01, run `ping DC01` and `nslookup ad.shadowstrike.test` to confirm name resolution and connectivity.
 - Confirm you can log on to CLIENT01 with domain credentials (e.g., SHADOWSTRIKE\Administrator or a created test user).
 
-<img width="1046" height="263" alt="image" src="https://github.com/user-attachments/assets/ac42a0d5-45c9-446e-8a6b-04be322c9e3e" />
+<img width="862" height="615" alt="image" src="https://github.com/user-attachments/assets/e63c19d3-0720-424f-ad6f-d6b08709ea1c" />
 
 
 Notes:

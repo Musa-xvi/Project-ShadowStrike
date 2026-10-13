@@ -175,11 +175,17 @@ CPU | 2 vCPUs
 Storage | 64 GB
 Virtual switch | ShadowStrike-LAN
 
+<img width="869" height="528" alt="Screenshot 2026-10-13 182357" src="https://github.com/user-attachments/assets/0a1fc592-6552-415f-973a-98196b8a73d5" />
+
+<img width="1009" height="817" alt="Screenshot 2026-10-13 181705" src="https://github.com/user-attachments/assets/2a3849aa-6e48-48b7-a2ba-c79cfc074dc6" />
+
 After creating the VM, attach a Windows 11 ISO, start CLIENT01, and install the OS. Once installed, sign in to the local Administrator account and configure the network adapter:
 
 - Set a static IP in the 10.10.10.0/24 range (for example, 10.10.10.20)
 - Subnet mask: 255.255.255.0
 - Preferred DNS server: 10.10.10.10 (DC01)
+
+<img width="1225" height="835" alt="image" src="https://github.com/user-attachments/assets/33e05ac8-3e41-4e0c-8150-a82cfcbfc8c5" />
 
 Rename the computer to CLIENT01 and restart.
 
@@ -190,9 +196,16 @@ Join CLIENT01 to the domain `ad.shadowstrike.test`:
 3. When prompted, authenticate with the domain Administrator account: SHADOWSTRIKE\Administrator
 4. After successful join, restart CLIENT01
 
+Another alternative way is to use powershell with below commands,
+
+<img width="1046" height="263" alt="image" src="https://github.com/user-attachments/assets/284d4363-b827-4c11-9d75-570fe7563031" />
+
 Validation:
 - From CLIENT01, run `ping DC01` and `nslookup ad.shadowstrike.test` to confirm name resolution and connectivity.
 - Confirm you can log on to CLIENT01 with domain credentials (e.g., SHADOWSTRIKE\Administrator or a created test user).
+
+<img width="1046" height="263" alt="image" src="https://github.com/user-attachments/assets/ac42a0d5-45c9-446e-8a6b-04be322c9e3e" />
+
 
 Notes:
 - If you have issues joining, verify DNS settings on CLIENT01 point to DC01 and that DC01's DNS has the _msdcs and domain records.

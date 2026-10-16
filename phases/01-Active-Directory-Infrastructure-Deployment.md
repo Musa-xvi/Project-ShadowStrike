@@ -30,7 +30,7 @@ Setting | Configuration
 --- | ---
 Hypervisor | Microsoft Hyper-V
 Physical host IP | 192.168.8.149 (DHCP)
-Home router | 192.168.8.1
+Home router | 192.168.*.*
 Virtual switch | ShadowStrike-LAN
 Virtual switch type | Private
 Lab subnet | 10.10.10.0/24

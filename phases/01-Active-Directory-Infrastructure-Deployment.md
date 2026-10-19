@@ -29,7 +29,7 @@ We'll keep the existing Wi-Fi network separate from the Active Directory lab.
 Setting | Configuration
 --- | ---
 Hypervisor | Microsoft Hyper-V
-Physical host IP | 192.168.8.149 (DHCP)
+Physical host IP | 192.168.*.* (DHCP)
 Home router | 192.168.*.*
 Virtual switch | ShadowStrike-LAN
 Virtual switch type | Private
@@ -202,7 +202,7 @@ Another alternative way is to use powershell with below commands,
 
 Validation:
 - From CLIENT01, run `ping DC01` and `nslookup ad.shadowstrike.test` to confirm name resolution and connectivity.
-- Confirm you can log on to CLIENT01 with domain credentials (e.g., SHADOWSTRIKE\Administrator or a created test user).
+- Confirm you can log on to CLIENT01 with domain credentials.
 
 <img width="862" height="615" alt="image" src="https://github.com/user-attachments/assets/e63c19d3-0720-424f-ad6f-d6b08709ea1c" />
 
